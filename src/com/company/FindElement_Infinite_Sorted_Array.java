@@ -10,7 +10,7 @@ class Operation {
             low = high;
             high = 2 * high;
         }
-        return binarySearch(a, key, low, high);
+        return binarySearch(a, key, low, high);// updation
     }
 
     public static int binarySearch(int arr[], int key, int low, int high) {
