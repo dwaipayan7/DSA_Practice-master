@@ -15,9 +15,9 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         int a[] = {2,1,45,22};
-        bubbleSort(a,4);
+        bubbleSort(a,a.length);
         for (int i = 0;i<4;i++){
-            System.out.println(a[i] + " ");
+            System.out.print(a[i] + " ");
         }
     }
 }
