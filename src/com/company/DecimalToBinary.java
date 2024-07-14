@@ -1,19 +1,18 @@
-public class DecimalToBinary {
+package com.company;
 
-    public static void decToBinary(int n){
+public class DecimalToBinary {
+    public static void decimalToBinary(int n) {
+        int i = 0;
         int binaryNum[] = new int[32];
 
-        //counter
-        int i=0;
-        while (n>0){
-            binaryNum[i] = n%2;
-            n = n/2;
+        while (n > 0) {
+            binaryNum[i] = n % 2;
+            n /= 2;
             i++;
         }
 
-        //print
-        for (int j=i-1; j>=0; j--){
-            System.out.print(binaryNum[j]+" ");
+        for (int j = i - 1; j >= 0; j--) {
+            System.out.print(binaryNum[j] + " ");
         }
     }
 
@@ -35,11 +34,11 @@ public class DecimalToBinary {
 
     public static void main(String[] args) {
 
-        int decimal = 111011;
-       int res = getDecimal(decimal);
+        int n = 11101;
+        int res = getDecimal(n);
         System.out.println(res);
 
-        int n = 17;
-        decToBinary(n);
+        int i = 11;
+        decimalToBinary(i);
     }
 }
