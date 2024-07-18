@@ -4,7 +4,7 @@ public class NQueenPrac {
 
     static int N = 4;
 
-    static boolean nQueen(int board[][], int row) {
+    static boolean nQueen(int[][] board, int row) {
         if (row == N) {
             printBoard(board);
             return true;
