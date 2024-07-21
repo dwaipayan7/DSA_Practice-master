@@ -47,6 +47,18 @@ public class Patterns {
 
     }
 
+    public static void printPyramid(int rows) {
+        for (int i = 1; i <= rows; ++i) {
+            for (int space = 1; space <= rows - i; ++space) {
+                System.out.print("  ");
+            }
+            for (int k = 0; k != 2 * i - 1; ++k) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
 
 
 
@@ -55,19 +67,18 @@ public class Patterns {
 
         pattern1(4);
 
+        System.out.println();
+
         pattern2(5);
+
+        System.out.println();
 
         pattern3('E');
 
+        System.out.println();
 
-        //pattern 2
-//        1
-//        22
-//        333
-//        4444
-
-
-
+        printPyramid(6);
+        
 
     }
 
