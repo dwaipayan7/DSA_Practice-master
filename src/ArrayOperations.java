@@ -21,7 +21,7 @@ public class ArrayOperations {
             System.arraycopy(arr, 0, newArray, 0, arr.length);
             arr = newArray;
         }
-
+//updation
         for (int i = size; i > index; i--) {
             arr[i] = arr[i - 1];
         }
