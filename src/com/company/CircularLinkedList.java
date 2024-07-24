@@ -44,6 +44,26 @@ public class CircularLinkedList {
         System.out.println("HEAD");
     }
 
+    public void delete(int val){
+        Node node = head;
+        if (node == null){
+            return;
+        }
+        if (node.val == val){
+            head = head.next;
+            tail.next = head;
+            return;
+        }
+        do {
+            Node n = node.next;
+            if (n.val == val){
+                node.next = n.next;
+                break;
+            }
+            node = n.next;
+        }while (node != head);
+    }
+
     public static void main(String[] args) {
         CircularLinkedList list = new CircularLinkedList();
 
@@ -53,6 +73,8 @@ public class CircularLinkedList {
         list.insert(3);
         list.insert(4);
         list.insert(5);
+
+        list.delete(3);
 
         // Displaying elements of the circular linked list
         list.display();
