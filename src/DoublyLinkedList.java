@@ -28,6 +28,28 @@ public class DoublyLinkedList {
         head = node;
     }
 
+
+    public void insertLast(int val){
+        Node node = new Node(val);
+        Node last = head;
+
+        node.next = null;
+
+        if (head == null){
+            node.prev = null;
+            node = head;
+            return;
+        }
+
+        while (last.next != null){
+            last = last.next;
+        }
+        last.next = node;
+        node.prev = last;
+
+    }
+
+
     public void display() {
         Node last = null;
         Node node = head;
@@ -56,6 +78,8 @@ public class DoublyLinkedList {
         list.insertFirst(5);
         list.insertFirst(9);
         list.insertFirst(7);
+
+        list.insertLast(88);
 
         list.display();
     }
