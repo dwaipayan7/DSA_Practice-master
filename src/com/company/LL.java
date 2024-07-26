@@ -4,7 +4,7 @@ public class LL {
     static Node head;
     static Node tail;
 
-    class Node {
+    static class Node {
         int data;
         Node next;
 
