@@ -3,43 +3,43 @@ package com.company;
 public class LL {
     static Node head;
     static Node tail;
-    class Node{
+
+    class Node {
         int data;
         Node next;
 
-        Node(int x){
+        Node(int x) {
             data = x;
             next = null;
         }
     }
 
-    public void insertFirst(int val){
+    public void insertFirst(int val) {
         Node node = new Node(val);
         node.next = head;
         head = node;
 
-        if (tail == null){
+        if (tail == null) {
             tail = head;
         }
-
     }
 
-    public void display(){
+    public void display() {
         Node temp = head;
-        while (temp != null){
-            System.out.print(temp.data+"->");
+        while (temp != null) {
+            System.out.print(temp.data + "->");
             temp = temp.next;
         }
         System.out.println("END");
     }
 
-    public void reverseIterate(){
-        if (head == null || head.next == null){
+    public void reverseIterate() {
+        if (head == null || head.next == null) {
             return;
         }
         Node prevNode = head;
         Node currNode = head.next;
-        while (currNode != null){
+        while (currNode != null) {
             Node nextNode = currNode.next;
             currNode.next = prevNode;
 
@@ -48,10 +48,29 @@ public class LL {
         }
         head.next = null;
         head = prevNode;
+        tail = head;
+        while (tail.next != null) {
+            tail = tail.next;
+        }
     }
 
-    public static void main(String[] args) {
+    public void insertRec(int val, int index) {
+        head = insertRec(val, index, head);
+    }
 
+    public Node insertRec(int val, int index, Node node) {
+        if (index == 0) {
+            Node temp = new Node(val);
+            temp.next = node;
+            return temp;
+        }
+        node.next = insertRec(val, index - 1, node.next);
+        return node;
+    }
+
+
+
+    public static void main(String[] args) {
         LL list = new LL();
         list.insertFirst(10);
         list.insertFirst(20);
@@ -62,9 +81,11 @@ public class LL {
         list.display();
 
         list.reverseIterate();
-        System.out.println("Reverse List: ");
+        System.out.println("Reversed List");
         list.display();
 
+        list.insertRec(25, 2);
+        System.out.println("List after inserting 25 at index 2");
+        list.display();
     }
-
 }

@@ -27,13 +27,13 @@ public class ReverseLinkedLIst_Practice {
 
             Node current = head;
             Node prev = null;
-            Node next = null;
             while (current != null) {
-                next = current.next;
+                Node next = current.next;
                 current.next = prev;
                 prev = current;
                 current = next;
             }
+            head.next = null;
             head = prev;
         }
 
