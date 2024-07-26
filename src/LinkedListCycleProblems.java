@@ -100,36 +100,60 @@ public class LinkedListCycleProblems {
         return cycleStart;
     }
 
+    // Middle of a linkedlist
+
+    public static Node middleNode(Node head) {
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+
     public static void main(String[] args) {
         LinkedListCycleProblems list = new LinkedListCycleProblems();
 
         // Insert nodes
-        list.insertFirst(10);
-        list.insertFirst(20);
-        list.insertFirst(30);
-        list.insertFirst(40);
+        list.insertFirst(10); // 10
+        list.insertFirst(20); // 20 -> 10
+        list.insertFirst(30); // 30 -> 20 -> 10
+        list.insertFirst(40); // 40 -> 30 -> 20 -> 10
+
+        Node middle = middleNode(head);
+        if (middle != null) {
+            System.out.println("The middle node value is: " + middle.val);
+        } else {
+            System.out.println("The list is empty.");
+        }
+
+
+
 
         // Creating a cycle for testing
-        list.head.next.next.next.next = list.head.next; // 40 -> 30 -> 20 -> 10 -> 30 (cycle)
-
-        // Check if the list has a cycle
-        if (list.hasCycle(list.head)) {
-            System.out.println("The list has a cycle.");
-
-            int cycleLength = lengthCycle(list.head);
-            System.out.println("The length of the cycle is: " + cycleLength);
-
-            Node cycleStart = deleteCycle(list.head);
-            System.out.println("The cycle starts at node with value: " + (cycleStart != null ? cycleStart.val : "null"));
-
-            // Verify if the cycle is removed
-            if (list.hasCycle(list.head)) {
-                System.out.println("The cycle was not removed.");
-            } else {
-                System.out.println("The cycle was removed.");
-            }
-        } else {
-            System.out.println("The list does not have a cycle.");
-        }
+//        list.head.next.next.next.next = list.head.next; // 40 -> 30 -> 20 -> 10 -> 30 (cycle)
+//
+//        // Check if the list has a cycle
+//        if (list.hasCycle(list.head)) {
+//            System.out.println("The list has a cycle.");
+//
+//            int cycleLength = lengthCycle(list.head);
+//            System.out.println("The length of the cycle is: " + cycleLength);
+//
+//            Node cycleStart = deleteCycle(list.head);
+//            System.out.println("The cycle starts at node with value: " + (cycleStart != null ? cycleStart.val : "null"));
+//
+//            // Verify if the cycle is removed
+//            if (list.hasCycle(list.head)) {
+//                System.out.println("The cycle was not removed.");
+//            } else {
+//                System.out.println("The cycle was removed.");
+//            }
+//        } else {
+//            System.out.println("The list does not have a cycle.");
     }
-}
+    }
+
