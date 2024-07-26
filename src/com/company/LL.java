@@ -24,6 +24,17 @@ public class LL {
         }
     }
 
+    public void insertLast(int val){
+        Node node = new Node(val);
+     if (tail == null){
+         head = node;
+         tail = node;
+     }else{
+         tail.next = node;
+         tail = node;
+     }
+    }
+
     public void display() {
         Node temp = head;
         while (temp != null) {
@@ -67,6 +78,34 @@ public class LL {
         node.next = insertRec(val, index - 1, node.next);
         return node;
     }
+
+    public LL merge(LL first, LL second){
+        Node f = first.head;
+        Node s = second.head;
+        LL ans = new LL();
+
+        while (f != null && s != null){
+            if (f.data < s.data){
+                ans.insertLast(f.data);
+                f = f.next;
+            }else{
+                ans.insertLast(s.data);
+                s = s.next;
+            }
+        }
+
+        while (f != null){
+            ans.insertLast(f.data);
+            f = f.next;
+        }
+        while (s != null){
+            ans.insertLast(s.data);
+            s = s.next;
+        }
+        return ans;
+
+    }
+
 
 
 
