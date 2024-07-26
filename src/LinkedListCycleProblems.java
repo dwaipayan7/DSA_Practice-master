@@ -34,27 +34,6 @@ public class LinkedListCycleProblems {
         return false;
     }
 
-    public static int lengthCycle(Node head) {
-        Node fast = head;
-        Node slow = head;
-
-        while (fast != null && fast.next != null) {
-            fast = fast.next.next;
-            slow = slow.next;
-
-            if (fast == slow) {
-                int length = 0;
-                Node temp = slow;
-                do {
-                    temp = temp.next;
-                    length++;
-                } while (temp != slow);
-                return length; // Return the length after calculating it
-            }
-        }
-        return 0; // Return 0 if there is no cycle
-    }
-
     public static void main(String[] args) {
         LinkedListCycleProblems list = new LinkedListCycleProblems();
 
@@ -70,7 +49,6 @@ public class LinkedListCycleProblems {
         // Check if the list has a cycle
         if (list.hasCycle(list.head)) {
             System.out.println("The list has a cycle.");
-            System.out.println("The length of the cycle is: " + lengthCycle(list.head));
         } else {
             System.out.println("The list does not have a cycle.");
         }
