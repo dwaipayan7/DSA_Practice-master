@@ -1,7 +1,7 @@
-import java.util.ArrayDeque;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.Queue;
+
+
+import java.util.*;
+
 
 public class QueueBasic {
     public static void main(String[] args) {
@@ -64,7 +64,42 @@ public class QueueBasic {
 
 
 
+        Set<Student> set = new HashSet<>();
+
+       set.add((new Student(1,"Tatay")));
+       set.add((new Student(1,"Tatay")));
+       set.add((new Student(1,"Tatay")));
+       set.add((new Student(1,"Tatay")));
+       set.add((new Student(1,"Tatay")));
+       set.add((new Student(1,"Tatay")));
+
+        System.out.println(set);
+//
+//        set.add(10);
+//        set.add(10);
+//        set.add(10);
+//        set.add(10);
+//        set.add(20);
+//        set.add(10);
+//
+//
+//        System.out.println(set);
+//        set.remove(10);
+//        System.out.println(set);
+
 
 
     }
+}
+
+ class Student{
+    int roll;
+    String name;
+
+    Student(int roll, String name){
+        this.roll = roll;
+        this.name = name;
+    }
+
+
 }
