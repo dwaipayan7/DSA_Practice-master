@@ -178,7 +178,7 @@ import java.util.List;
 
             // Create a playlist and add songs to it
             library.createPlaylist("My Playlist");
-            Playlist myPlaylist = library.getAllPlaylists().get(0);
+            Playlist myPlaylist = library.getAllPlaylists().getFirst();
             library.addSongToPlaylist(song1, myPlaylist);
             library.addSongToPlaylist(song2, myPlaylist);
 
