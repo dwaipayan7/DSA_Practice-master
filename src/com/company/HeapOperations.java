@@ -22,6 +22,28 @@ public class HeapOperations {
         }
     }
 
+    void delete(int A[], int n){
+        A[1] = A[n];
+        n = n-1;
+        int i = 1;
+
+        while (i<n){
+            int left = A[2*i];
+            int right = A[2*i+1];
+            int larger = left > right ? 2*i : 2*i+1;
+
+            if (A[i] < A[larger]){
+                swap(A,i,larger);
+
+                i = larger;
+            }else{
+                return;
+            }
+        }
+
+    }
+
+
     public static void main(String[] args) {
         HeapOperations heap = new HeapOperations();
 
@@ -49,6 +71,17 @@ public class HeapOperations {
         for (int i = 1; i <= n; i++) {
             System.out.print(A[i] + " ");
         }
+
+        heap.delete(A, n);
+        n--; // Decrement size after deletion
+
+        System.out.println();
+
+        System.out.println("Heap after deletion:");
+        for (int i = 1; i <= n; i++) {
+            System.out.print(A[i] + " ");
+        }
+
     }
 
 }
