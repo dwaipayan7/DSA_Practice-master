@@ -1,5 +1,6 @@
 import java.util.ArrayDeque;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class QueueBasic {
@@ -41,15 +42,24 @@ public class QueueBasic {
 
 
 
-ArrayDeque<Integer> stack = new ArrayDeque<>();
+//ArrayDeque<Integer> stack = new ArrayDeque<>();
+//
+//        stack.push(34);
+//        stack.push(55);
+//        System.out.println(stack);
+//        stack.pop();
+//        System.out.println(stack);
 
-        stack.push(34);
-        stack.push(55);
-        System.out.println(stack);
-        stack.pop();
-        System.out.println(stack);
-
-
+//        Queue<Integer> pq = new PriorityQueue<>();
+//
+//        pq.add(34);
+//        pq.add(10);
+//        pq.add(45);
+//
+//        System.out.println(pq);
+//        System.out.println(pq.poll());
+//        System.out.println(pq);
+//
 
 
 
