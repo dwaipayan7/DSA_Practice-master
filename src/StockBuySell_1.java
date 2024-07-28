@@ -31,6 +31,6 @@ public class StockBuySell_1 {
         System.out.println("Maximum profit for a single transaction: " + maxProfit(arr));
 
         System.out.println("Maximum profit for multiple transactions: " + mAxProfit(arr));
-
+        //Logic clear
     }
 }
