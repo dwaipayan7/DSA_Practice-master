@@ -55,6 +55,7 @@ public class HeapOperations {
         A[5] = 10;
         A[6] = 8;
         A[7] = 16;
+
         int n = 7; // Current size of the heap
 
         System.out.println("Heap before insertion:");
