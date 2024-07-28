@@ -50,7 +50,7 @@ public class QueueBasic {
 //        stack.pop();
 //        System.out.println(stack);
 
-//        Queue<Integer> pq = new PriorityQueue<>();
+//        Queue<Integer> pq = new PriorityQueue<>((a,b)->b-a);
 //
 //        pq.add(34);
 //        pq.add(10);
@@ -59,7 +59,7 @@ public class QueueBasic {
 //        System.out.println(pq);
 //        System.out.println(pq.poll());
 //        System.out.println(pq);
-//
+
 
 
 
