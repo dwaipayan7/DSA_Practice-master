@@ -85,7 +85,62 @@ public class BinaryTreeOperations {
                 }
             }
         }
+
+
+        public static int height(Node root) {
+            if(root == null) {
+                return 0;
+            }
+
+
+            int leftHeight = height(root.left);
+            int rightHeight = height(root.right);
+            return Math.max(leftHeight, rightHeight) + 1;
+        }
+
+
+        public static int diameter(Node root){
+            if (root == null){
+                return 0;
+            }
+
+            int diam1 = diameter(root.left);
+            int diam2 = diameter(root.right);
+            int diam3 = height(root.left) + height(root.right) + 1;
+
+            return Math.max(diam3, Math.max(diam1, diam2));
+        }
+
     }
+    static class TreeInfo {
+        int height;
+        int diam;
+
+        TreeInfo(int height, int diam) {
+            this.height = height;
+            this.diam = diam;
+        }
+    }
+
+    public static TreeInfo diameter(Node root) {
+        if (root == null) {
+            return new TreeInfo(0, 0);
+        }
+
+        TreeInfo leftTI = diameter(root.left);
+        TreeInfo rightTI = diameter(root.right);
+
+        int myHeight = Math.max(leftTI.height, rightTI.height) + 1;
+
+        int diam1 = leftTI.height + rightTI.height + 1;
+        int diam2 = leftTI.diam;
+        int diam3 = rightTI.diam;
+
+        int myDiam = Math.max(diam1, Math.max(diam2, diam3));
+
+        return new TreeInfo(myHeight, myDiam);
+    }
+
 
     public static void main(String[] args) {
         BinaryTreeOperations treeOps = new BinaryTreeOperations();
@@ -107,5 +162,13 @@ public class BinaryTreeOperations {
 
         System.out.println("\nThis is Level Order Traversal:");
         tree.levelOrder(root);
+
+        System.out.println("Diameter of the tree: ");
+        System.out.println(tree.diameter(root));
+
+
+        TreeInfo treeInfo = diameter(root);
+        System.out.println("Diameter of the tree is: " + treeInfo.diam);
+
     }
 }
