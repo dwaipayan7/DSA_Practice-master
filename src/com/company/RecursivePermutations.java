@@ -64,6 +64,19 @@ public class RecursivePermutations {
 
     }
 
+    static int guestCall(int n){
+        if (n<=1){
+            return 1;
+        }
+        //Single guest
+        int way1 = guestCall(n-1);
+        //Pair of guests
+        int way2 = (n-1)*guestCall(n-2);
+
+        return way1+way2;
+
+    }
+
 
 
 
@@ -86,10 +99,14 @@ public class RecursivePermutations {
 //        };
 //        pathRestrictions("", maze, 0, 0);
 
-        int n = 4;
-        int m = 3;
+//        int n = 4;
+//        int m = 3;
+//
+//        System.out.println( printTiles(n,m));
 
-        System.out.println( printTiles(n,m));
+        int n = 4;
+
+        System.out.println(guestCall(n));
 
 
 
