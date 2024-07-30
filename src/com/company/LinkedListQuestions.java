@@ -139,49 +139,147 @@ public class LinkedListQuestions {
         tail.next = cycleNode;
     }
 
+    public Node reverseBetween(Node head, int left, int right){
+        if (left == right){
+            return head;
+        }
+
+        //skip the first left-1 nodes
+        Node current = head;
+        Node prev = null;
+
+        for (int i=0; current != null && i < left-1;i++){
+            prev = current;
+            current = current.next;
+        }
+        Node last = prev;
+        Node newEnd = current;
+        //reverse between
+
+        Node next = current.next;
+
+        for (int i=0; i<right-left+1; i++){
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+            if (next != null){
+                next = next.next;
+            }
+            if (last != null){
+                last.next = prev;
+            }else{
+                head = prev;
+            }
+        newEnd.next = current;
+
+            return head;
+
+    }
+
+    public Node reverseGroup(Node head, int k){
+        if (k <= 1 || head == null){
+            return head;
+        }
+
+        Node current = head;
+        Node prev = null;
+
+        while (true){
+            Node last = prev;
+            Node newEnd = current;
+
+            Node next = current.next;
+
+            for (int i=0; current != null && i < k; i++){
+                current.next = prev;
+                prev = current;
+                current = next;
+                if (next != null){
+                    next = next.next;
+                }
+            }
+            if (last != null){
+                last.next = prev;
+            }else{
+                head = prev;
+            }
+
+            newEnd.next = current;
+            if (current == null){
+                break;
+            }
+            prev = newEnd;
+        }
+
+
+        return head;
+    }
+
+
+
 
     public static void main(String[] args) {
         LinkedListQuestions listQuestions = new LinkedListQuestions();
-//
-//        // Create a linked list with values 1, 2, 3, 4, 5
-//        int[] values = {1, 2, 3, 4, 5};
-//        Node head = listQuestions.createList(values);
-//
-//        System.out.println("Original Linked List:");
-//        listQuestions.printList(head);
-//
-//        // Remove the 2nd node from the end
-//        head = listQuestions.removeNthFromEnd(head, 2);
-//
-//        System.out.println("Linked List after removing 2nd node from end:");
-//        listQuestions.printList(head);
 
-//        int[] values = {1, 2, 3, 2, 1};
-//        Node head = listQuestions.createList(values);
-//
-//        System.out.println("Original Linked List:");
-//        listQuestions.printList(head);
-//
-//        boolean isPalin = isPalindrome(head);
-//        System.out.println("Is the linked list a palindrome? " + isPalin);
-
-
+        // Test removeNthFromEnd
         int[] values = {1, 2, 3, 4, 5};
         Node head = listQuestions.createList(values);
-
         System.out.println("Original Linked List:");
         listQuestions.printList(head);
 
-        // Check for cycle (should be false)
-        boolean hasCycle = listQuestions.hasCycle(head);
-        System.out.println("Does the linked list have a cycle? " + hasCycle);
+        head = listQuestions.removeNthFromEnd(head, 2);
+        System.out.println("Linked List after removing 2nd node from end:");
+        listQuestions.printList(head);
 
-        // Create a cycle in the linked list (cycle at position 2)
-        listQuestions.createCycle(head, 2);
+        // Test isPalindrome
+//        int[] palindromeValues = {1, 2, 3, 2, 1};
+//        Node palinHead = listQuestions.createList(palindromeValues);
+//        System.out.println("Original Linked List:");
+//        listQuestions.printList(palinHead);
+//
+//        boolean isPalin = listQuestions.isPalindrome(palinHead);
+//        System.out.println("Is the linked list a palindrome? " + isPalin);
+//
+//        // Test hasCycle and createCycle
+//        int[] cycleValues = {1, 2, 3, 4, 5};
+//        Node cycleHead = listQuestions.createList(cycleValues);
+//        System.out.println("Original Linked List:");
+//        listQuestions.printList(cycleHead);
+//
+//        boolean hasCycle = listQuestions.hasCycle(cycleHead);
+//        System.out.println("Does the linked list have a cycle? " + hasCycle);
+//
+//        listQuestions.createCycle(cycleHead, 2);
+//        hasCycle = listQuestions.hasCycle(cycleHead);
+//        System.out.println("Does the linked list have a cycle after creating one? " + hasCycle);
 
-        // Check for cycle again (should be true)
-        hasCycle = listQuestions.hasCycle(head);
-        System.out.println("Does the linked list have a cycle after creating one? " + hasCycle);
-
+        // Test reverseBetween
+//        int[] reverseBetweenValues = {1, 2, 3, 4, 5};
+//        Node reverseBetweenHead = listQuestions.createList(reverseBetweenValues);
+//        System.out.println("Original list:");
+//        listQuestions.printList(reverseBetweenHead);
+//
+//        Node reversedBetweenHead = listQuestions.reverseBetween(reverseBetweenHead, 2, 4);
+//        System.out.println("List after reverseBetween(2, 4):");
+//        listQuestions.printList(reversedBetweenHead);
+//
+//        // Test reverseGroup
+//        int[] reverseGroupValues = {1, 2, 3, 4, 5};
+//        Node reverseGroupHead = listQuestions.createList(reverseGroupValues);
+//        System.out.println("Original list:");
+//        listQuestions.printList(reverseGroupHead);
+//
+//        Node reversedGroupHead = listQuestions.reverseGroup(reverseGroupHead, 2);
+//        System.out.println("List after reverseGroup(2):");
+//        listQuestions.printList(reversedGroupHead);
     }
 }
+
+
+
+
+
+
+
+
