@@ -49,6 +49,21 @@ public class RecursivePermutations {
 
     }
 
+    static int printTiles(int n, int m){
+        if (n==m){
+            return 2;
+        }
+        if (n<m){
+            return 1;
+        }
+
+        int vertically = printTiles(n-m,m);
+        int horizontally = printTiles(n-1,m);
+
+        return vertically+horizontally;
+
+    }
+
 
 
 
@@ -57,19 +72,26 @@ public class RecursivePermutations {
 
        printPerm(str,"");
 
-       int n = 3;
-       int m = 3;
-       int res = countPathsOfMaze(0,0,n,m);
-        System.out.println(res);
+//       int n = 3;
+//       int m = 3;
+//       int res = countPathsOfMaze(0,0,n,m);
+//        System.out.println(res);
+//
+//        System.out.println();
+//
+//        boolean[][] maze = {
+//                {true, true, true},
+//                {true, false, true},
+//                {true, true, true}
+//        };
+//        pathRestrictions("", maze, 0, 0);
 
-        System.out.println();
+        int n = 4;
+        int m = 3;
 
-        boolean[][] maze = {
-                {true, true, true},
-                {true, false, true},
-                {true, true, true}
-        };
-        pathRestrictions("", maze, 0, 0);
+        System.out.println( printTiles(n,m));
+
+
 
 
     }
