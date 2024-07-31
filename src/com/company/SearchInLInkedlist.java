@@ -2,7 +2,7 @@ package com.company;
 
 class Node1{
     int data;
-    Node next;
+    Node1 next;
     Node1(int x){
         data=x;
         next=null;
@@ -13,15 +13,15 @@ public class SearchInLInkedlist {
 
     public static void main(String[] args) {
 
-        Node head = new Node(10);
-        head.next = new Node(20);
-        head.next.next = new Node(30);
+        Node1 head = new Node1(10);
+        head.next = new Node1(20);
+        head.next.next = new Node1(30);
         printlist(head);
         System.out.println("Position of element in linkedlist: "+search(head,20));
     }
 
-    public static void printlist(Node head){
-        Node curr = head;
+    public static void printlist(Node1 head){
+        Node1 curr = head;
         while (curr != null){
             System.out.print(curr.data + " ");
             curr = curr.next;
@@ -43,7 +43,7 @@ public class SearchInLInkedlist {
 //        return -1;
 //    }
 
-    static int search(Node head, int x){
+    static int search(Node1 head, int x){
         if (head == null)
             return -1;
         if (head.data == x)
