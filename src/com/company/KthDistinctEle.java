@@ -5,16 +5,16 @@ import java.util.HashSet;
 public class KthDistinctEle {
 
     static int printKDist(int arr[], int k) {
+
         int n = arr.length;
         HashSet<Integer> seen = new HashSet<>();
         int count = 0;
-
-        for (int i = 0; i < n; i++) {
-            if (!seen.contains(arr[i])) {
+        for (int i=0; i<n;i++){
+            if (!seen.contains(arr[i])){
                 seen.add(arr[i]);
                 count++;
 
-                if (count == k) {
+                if (count == k){
                     return arr[i];
                 }
             }
