@@ -2,7 +2,7 @@
 
 import java.util.Vector;
 
-public static void printPairs(int arr[], int n)
+ static void printPairs(int arr[], int n)
 {
     Vector<Integer> v = new Vector<Integer>();
     // For each element of array.
