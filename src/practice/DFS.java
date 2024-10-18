@@ -1,37 +1,28 @@
 package practice;
 
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Queue;
 
-public class BFS {
+public class DFS {
 
-    static class Edge {
+   static class Edge{
         int src;
         int dest;
-
-        Edge(int s, int d) {
+        Edge(int s, int d){
             src = s;
             dest = d;
         }
     }
 
-    public static void bfs(ArrayList<Edge>[] graph, int V, boolean[] vis, int start) {
-        Queue<Integer> q = new ArrayDeque<>();
-        q.add(start);
+    public static void dfs(ArrayList<Edge>[]graph, int curr, boolean[]vis){
+        System.out.print(curr+" ");
+        vis[curr] = true;
 
-        while (!q.isEmpty()) {  // Change this condition to process while queue is not empty
-            int curr = q.remove();
-            if (!vis[curr]) {
-                System.out.print(curr + " ");
-                vis[curr] = true;
-                for (int i = 0; i < graph[curr].size(); i++) {
-                    Edge e = graph[curr].get(i);
-                    q.add(e.dest);
-                }
+        for (int i = 0; i<graph[curr].size(); i++){
+            Edge e = graph[curr].get(i);
+            if (!vis[e.dest]){
+                dfs(graph, e.dest, vis);
             }
         }
-
     }
 
 
@@ -64,20 +55,19 @@ public class BFS {
         graph[6].add(new Edge(6, 5));
     }
 
+
     public static void main(String[] args) {
         int V = 7;
-
-        ArrayList<Edge>[] graph = new ArrayList[V];
+        ArrayList<Edge> []graph = new ArrayList[V];
         createGraph(graph);
 
-        boolean[] vis = new boolean[V];
-
-        for (int i = 0; i < V; i++) {
-            if (!vis[i]) {
-                bfs(graph, V, vis, i);
+        boolean []vis = new boolean[V];
+        for (int i=0; i<V; i++){
+            if (!vis[i]){
+                dfs(graph, i, vis);
             }
         }
-        System.out.println();
+
     }
 
 }
