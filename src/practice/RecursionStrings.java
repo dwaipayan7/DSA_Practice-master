@@ -24,6 +24,29 @@ public class RecursionStrings {
         powerSet(s,i+1,curr);
     }
 
+    //permutations of a given string
+    static void permute(String s, int l, int r){
+        if (l == r){
+            System.out.print(s+" ");
+            return;
+        }
+        for (int i=0; i<r; i++){
+            s = swap(s,l,r);
+            permute(s,l+1, r);
+            s = swap(s,l,r);
+
+        }
+    }
+
+    static String swap(String s, int i, int j){
+        char[] charArray = s.toCharArray();
+        char temp = charArray[i];
+        charArray[i] = charArray[j];
+        charArray[j] = temp;
+
+        return String.valueOf(charArray);
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String s = "mom";
@@ -36,6 +59,11 @@ public class RecursionStrings {
 
         String a = "abc";
         powerSet(a,0,"");
+        System.out.println();
+
+        String b = "abc";
+        System.out.print("Permutations of " + b + ": ");
+        permute(b, 0, s.length() - 1);
 
 
     }
