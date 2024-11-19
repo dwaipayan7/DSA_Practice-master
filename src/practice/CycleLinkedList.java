@@ -36,11 +36,26 @@ public class CycleLinkedList {
        return start;
     }
 
-    Node insertFirst(int data){
+    void deleteCycle(Node head){
+       Node cycleStart = detectFirst(head);
+       if (cycleStart == null){
+           System.out.println("No cycle to detect");
+           return;
+       }
+       Node current = cycleStart;
+       while (current.next != cycleStart){
+           current = current.next;
+       }
+
+       current.next = null;
+        System.out.println("Cycle Detected");
+    }
+
+
+    void insertFirst(int data){
        Node node = new Node(data);
        node.next =head;
        head = node;
-       return head;
     }
 
     static void printList(Node head){
@@ -73,8 +88,20 @@ public class CycleLinkedList {
             // Find the first node of the cycle
             Node firstCycleNode = list.detectFirst(head);
             System.out.println("First node of cycle is: " + firstCycleNode.data);
+
+            // Delete the cycle
+            list.deleteCycle(head);
+
+            // Verify the cycle is removed
+            if (list.detectCycle(head) == null) {
+                System.out.println("Cycle successfully deleted. \nLinked list is now:");
+                printList(head);
+            } else {
+                System.out.println("Cycle was not deleted.");
+            }
         } else {
             System.out.println("No cycle detected.");
+            printList(head);
         }
     }
 
