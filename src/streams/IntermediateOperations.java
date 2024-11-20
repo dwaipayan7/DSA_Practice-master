@@ -20,7 +20,9 @@ public class IntermediateOperations {
 
         System.out.println(list.stream().filter(x->x.startsWith("A")).count());
 
-        System.out.println(Stream.iterate(1,x->x+1).limit(10));
+        System.out.println(Stream.iterate(1,x->x+1).limit(10).count());
+
+        System.out.println(Stream.iterate(1,x->x+1).skip(10).limit(100).count());
 
     }
 
