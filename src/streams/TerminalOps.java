@@ -3,9 +3,11 @@ package streams;
 import javax.swing.text.html.Option;
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class TerminalOps {
     public static void main(String[] args) {
@@ -48,8 +50,39 @@ public class TerminalOps {
         System.out.println(integers.stream().reduce(Integer :: sum).get());
 
         //example: counting occurrence
-        String sentence = "Dwaipayan";
-        System.out.println(sentence.chars().filter(x-> x == 'a').count());
+//        String sentence = "Dwaipayan";
+//        System.out.println(sentence.chars().filter(x-> x == 'a').count());
+
+        //to array
+        System.out.println(Stream.of(1,2,3).toArray());
+
+        System.out.println( Stream.of(2,44,69).max(Comparator.naturalOrder()));
+
+
+        List<List<String>> listOfLists = Arrays.asList(
+                Arrays.asList("apple","banana"),
+                Arrays.asList("orange","kiwi"),
+                Arrays.asList("pear","grape")
+        );
+        System.out.println(listOfLists.get(1).get(1));
+
+        System.out.println(listOfLists.stream().flatMap(x -> x.stream()).map(String::toUpperCase).toList());
+
+        List<String> sentences = Arrays.asList(
+                "Hello World",
+                "Java Streams ",
+                "Dwaipayan Biswas"
+        );
+        System.out.println(sentences.stream().
+                flatMap(sentence ->
+                        Arrays.stream(sentence.
+                                split(" "))).
+                map(String ::toUpperCase).toList());
+
+
+        Stream<String> stream = names.stream();
+//        stream.forEach(System.out::println);
+//        List<String> list1 = stream.map(String::toUpperCase).toList();
 
     }
 
