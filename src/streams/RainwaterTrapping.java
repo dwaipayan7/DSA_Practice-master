@@ -10,7 +10,7 @@ public class RainwaterTrapping {
         int right[] = new int[n];
 
         left[0] = a[0];
-        for (int i = 0; i<n; i++){
+        for (int i = 1; i<n; i++){
             left[i] = Math.max(left[i-1],a[i]);
         }
         right[n-1] = a[n-1];
@@ -24,27 +24,13 @@ public class RainwaterTrapping {
         }
         return ans;
     }
-    public class Main {
 
-        public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
 
-            // Input array size
-            System.out.print("Enter the size of the array: ");
-            int n = sc.nextInt();
-
-            // Input array elements
-            int[] arr = new int[n];
-            System.out.println("Enter the array elements:");
-            for (int i = 0; i < n; i++) {
-                arr[i] = sc.nextInt();
-            }
-
-            // Call the rainWaterTrapping method and print the result
-            int result = RainwaterTrapping.rainWaterTrapping(arr);
-            System.out.println("Total trapped rainwater: " + result);
-
-            sc.close();
-        }
+    public static void main(String[] args) {
+        // Example input
+        int[] arr = {3, 0, 0, 2, 0, 4};
+        int result = rainWaterTrapping(arr);
+        System.out.println("Total trapped rainwater: " + result);
     }
-}
+    }
+
