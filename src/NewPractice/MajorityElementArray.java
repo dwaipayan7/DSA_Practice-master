@@ -32,7 +32,7 @@ public class MajorityElementArray {
 
     // Main method
     public static void main(String[] args) {
-        int arr[] = {1, 1, 1, 2, 2, 3, 4};
+        int arr[] = {3, 3, 4, 2, 3, 3, 3};
         int res = findMajorityElement(arr);
         if (res != -1) {
             System.out.println("The majority element is: " + res);
