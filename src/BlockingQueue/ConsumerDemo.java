@@ -1,9 +1,11 @@
 package BlockingQueue;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.*;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class ConsumerDemo {
 
@@ -45,7 +47,32 @@ public class ConsumerDemo {
         BiFunction<String, String, Integer> biFunction = (x,y) -> (x+y).length();
         System.out.println(biFunction.apply("a","bc"));
 
+        //Unary, Binary Operators
+        UnaryOperator<Integer> a = x->2*x;
+        BinaryOperator<Integer> b = (x,y) -> x+y;
 
+        //Method Reference
+
+        List<String> students = Arrays.asList("Ram", "Shyam", "Shayamram");
+        students.forEach(System.out::println);
+        students.forEach(System.out::println);
+
+        //Constructor reference
+        List<String> names = Arrays.asList("A", "B", "C");
+        List<MobilePhone> mobilePhones = names.stream()
+                .map(MobilePhone::new) // Create MobilePhone objects
+                .toList();
+
+        
+
+    }
+
+   static class MobilePhone{
+        String name;
+
+        public MobilePhone(String name) {
+            this.name = name;
+        }
     }
 
 
