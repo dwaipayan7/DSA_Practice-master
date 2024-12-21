@@ -30,7 +30,7 @@ public class PalinDromeLinkedList2 {
             next = curr.next;
             curr.next = prev;
             prev = curr;
-            curr = next; // Fix the incorrect line here
+            curr = next;
         }
         return prev;
     }
@@ -52,7 +52,7 @@ public class PalinDromeLinkedList2 {
             headSecond = headSecond.next;
         }
         reverse(reverse);
-        return headSecond == null || headSecond.next == null; // Adjust the condition to return proper result
+        return headSecond == null || headSecond.next == null;
 
     }
 
