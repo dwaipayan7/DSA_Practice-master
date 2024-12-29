@@ -19,7 +19,7 @@ public class DFS {
 
         for (int i = 0; i<graph[curr].size(); i++){
             Edge e = graph[curr].get(i);
-            if (vis[e.dest] == false){
+            if (!vis[e.dest]){
                 dfs(graph, e.dest, vis);
             }
         }
