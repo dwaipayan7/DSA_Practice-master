@@ -14,7 +14,8 @@ public class CycleDetectionUnDirectedGraph {
         }
     }
 
-    public static boolean isCycleUndirected(ArrayList<Edge>[] graph, boolean[] vis, int curr, int par) {
+    public static boolean isCycleUndirected(
+            ArrayList<Edge>[] graph, boolean[] vis, int curr, int par) {
         vis[curr] = true;
         for (int i = 0; i < graph[curr].size(); i++) {
             Edge e = graph[curr].get(i);
