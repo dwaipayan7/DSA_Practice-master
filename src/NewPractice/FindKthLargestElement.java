@@ -29,5 +29,4 @@ public class FindKthLargestElement {
         int result = kthLargest(arr, k);
         System.out.println("The " + k + "-th largest element is: " + result);
     }
-
 }
