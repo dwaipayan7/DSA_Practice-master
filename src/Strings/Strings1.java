@@ -11,13 +11,28 @@ public class Strings1 {
     }
 
     public static void main(String[] args) {
-        StringBuilder sb = new StringBuilder("h");
-        sb.append("e");
-        sb.append("l");
-        sb.append("l");
-        sb.append("o");
-        System.out.println(sb.length());
-        int num = 5;
-        System.out.println(fib(num));
+        StringBuilder sb = new StringBuilder("hello");
+//        sb.append("e");
+//        sb.append("l");
+//        sb.append("l");
+//        sb.append("o");
+//        System.out.println(sb.length());
+//        int num = 5;
+//        System.out.println(fib(num));
+
+        for (int i = 0; i<sb.length()/2; i++){
+            int front = i;
+            int back = sb.length() - 1 - i;
+
+            char frontChar = sb.charAt(front);
+            char backChar = sb.charAt(back);
+
+            sb.setCharAt(front, backChar);
+            sb.setCharAt(back, frontChar);
+        }
+
+        sb.reverse();
+
+        System.out.println(sb);
     }
 }
