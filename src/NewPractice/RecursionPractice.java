@@ -37,6 +37,33 @@ public class RecursionPractice {
         return fact;
     }
 
+    static int fib(int n){
+        if (n <= 1){
+            return n;
+        }
+        System.out.println(n);
+
+        return fib(n-1) + fib(n-2);
+    }
+
+    static int calPower(int x, int n){
+
+        if (n == 0){
+            return 1;
+        }
+
+        if (x == 0){
+            return 0;
+        }
+
+        int xPow1 = calPower(x, n-1);
+        int xPown = x * xPow1;
+
+        return xPown;
+    }
+
+
+
     public static void main(String[] args) {
 //        int n = 10;
 //        printNum(n);
@@ -46,6 +73,16 @@ public class RecursionPractice {
 
         int fact = 5;
         System.out.println(printFact(fact));
+
+        int n = 5;
+        int fibo = fib(n);
+        System.out.println(fibo);
+
+        int x = 2, n2 = 5;
+
+        int ans = calPower(x,n2);
+        System.out.println(ans);
+
 
     }
 }
