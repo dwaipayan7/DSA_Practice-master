@@ -17,9 +17,7 @@ public class FindElementsInfinity {
 
     }
 
-    static int binarySearch(
-            int[] arr, int low, int high, int x
-    ){
+    static int binarySearch(int[] arr, int low, int high, int x){
         if (low < high){
             int mid = (low + (high-low))/2;
             if (arr[mid] == x){
