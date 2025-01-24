@@ -49,7 +49,7 @@ void main(){
   AreaCalculator areaCalculator = AreaCalculator();
 
   print("Area of Circle is: ${areaCalculator.calculateArea(circle)}");
-  print("Area of Circle is: ${areaCalculator.calculateArea(rectangle)}");
-  print("Area of Circle is: ${areaCalculator.calculateArea(square)}");
+  print("Area of Rectangle is: ${areaCalculator.calculateArea(rectangle)}");
+  print("Area of Square is: ${areaCalculator.calculateArea(square)}");
 
 }

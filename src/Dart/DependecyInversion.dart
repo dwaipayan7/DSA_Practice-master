@@ -1,3 +1,4 @@
+//interface
 abstract interface class Bulb{
   void turnOn();
   void turnOff();
@@ -36,7 +37,7 @@ class Room{
 void main(){
   LEDBulb ledBulb = LEDBulb();
 
-  Room room = Room( bulb: ledBulb);
+  Room room = Room(bulb: ledBulb);
 
   room.switchLightOff();
   room.switchLightOn();
