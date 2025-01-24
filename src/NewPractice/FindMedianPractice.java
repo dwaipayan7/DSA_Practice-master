@@ -23,7 +23,7 @@ public class FindMedianPractice {
 
     }
 
-    public  double findMedian(){
+    public double findMedian(){
         if (maxHeap.size() == minHeap.size()){
             return (maxHeap.peek() + minHeap.peek())/2;
         }
