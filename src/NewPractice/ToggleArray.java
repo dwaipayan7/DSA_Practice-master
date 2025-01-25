@@ -16,7 +16,6 @@ public class ToggleArray {
         System.out.println("Toggled array: "+Arrays.toString(arr));
 
         //HashMap way
-
         HashMap<Integer, Integer> toggleMap = new HashMap<>();
 
         toggleMap.put(0,1);
