@@ -47,7 +47,7 @@ public class DuplicateLinkedList {
         return temp;
     }
 
-    // Main function to test the duplication method
+
     public static void main(String[] args) {
         DuplicateLinkedList list = new DuplicateLinkedList();
 
