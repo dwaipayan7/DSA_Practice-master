@@ -41,7 +41,7 @@ public class NQueensProb {
                 board[row][col] = 0; // Backtrack
             }
         }
-        return false; // No place found for the current row
+        return false;
     }
 
     public static void printBoard(int[][] board) {
