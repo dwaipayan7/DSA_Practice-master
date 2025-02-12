@@ -4,7 +4,7 @@ import java.util.Deque;
 public class SlidingWindowProblemPrac {
 
     // Naive Solution
-    static void printKMax(int arr[], int n, int k) {
+    static void printKMax(int[] arr, int n, int k) {
         for (int i = 0; i <= n - k; i++) {
             int max = arr[i];
             for (int j = 1; j < k; j++) {
@@ -14,11 +14,11 @@ public class SlidingWindowProblemPrac {
             }
             System.out.print(max + " ");
         }
-        System.out.println(); // To move to the next line after printing all max values
+        System.out.println();
     }
 
     // Optimized O(n) solution
-    static void printMaxOpt(int arr[], int k) {
+    static void printMaxOpt(int[] arr, int k) {
         Deque<Integer> Qi = new ArrayDeque<>();
 
         int n = arr.length;
@@ -50,7 +50,7 @@ public class SlidingWindowProblemPrac {
 
         // Print the maximum for the last window
         System.out.print(arr[Qi.peekFirst()]);
-        System.out.println(); // To move to the next line after printing all max values
+        System.out.println();
     }
 
     public static void main(String[] args) {

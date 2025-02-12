@@ -18,7 +18,7 @@ public class SlidingWindowPractice {
             }
             System.out.print(max + " ");
         }
-        System.out.println(); // To move to the next line after printing all max values
+        System.out.println();
     }
 
     //optimised
