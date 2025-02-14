@@ -1,6 +1,6 @@
 package abstraction;
 
-public abstract class Cat extends Animal{
+public class Cat extends Animal{
 
     @Override
     public void sayHello() {

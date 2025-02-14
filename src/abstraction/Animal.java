@@ -32,7 +32,7 @@ public abstract class Animal {
 
 
     public void sleep(){
-        System.out.println("zzz....");
+        System.out.println("....");
     }
 
 }

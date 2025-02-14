@@ -14,8 +14,18 @@ public class Test {
         animals animal = new animals();
         animal.sayHello();
 
-        Animal dog = new Dog();
+        Animal dog = new Dog(); //upcasting
         dog.sayHello();
+//        dog.saybye(); --> Bcz reference of Animal
+
+        Animal cat = new Cat();
+        cat.sayHello();
+
+        double d = 2.323232;
+        int e = (int)d;
+        System.out.println(e);
+
+        Dog myDog = (Dog) dog; //down-casting
 
     }
 
