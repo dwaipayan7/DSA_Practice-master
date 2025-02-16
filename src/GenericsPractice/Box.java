@@ -1,6 +1,6 @@
 package GenericsPractice;
 
-public class Box<T> {
+public class Box<T extends Number> {
 
 //    private Object value;
     private T value;
