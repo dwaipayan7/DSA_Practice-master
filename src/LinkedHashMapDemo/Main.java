@@ -37,8 +37,10 @@ public class Main {
         hashMap1.put("D", 78);
         hashMap1.put("Dwaipayan", 88);
 
-        Integer res = hashMap1.getOrDefault("JFdj", 0);
-        System.out.println(res);
+//        Integer res = hashMap1.getOrDefault("JFdj", 0);
+//        hashMap1.putIfAbsent("Tatay", 92);
+//        System.out.println(hashMap1);
+//        System.out.println(res);
 
 
     }
