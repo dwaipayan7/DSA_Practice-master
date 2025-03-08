@@ -16,7 +16,9 @@ public class GrandParent {
 
     private boolean hasSuperPowers;
 
-    public GrandParent(){
+    public GrandParent(int age, String name){
+        this.age = age;
+        this.name = name;
         hasSuperPowers = false;
         System.out.println("GrandParent constructor called");
     }

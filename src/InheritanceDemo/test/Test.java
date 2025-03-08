@@ -30,9 +30,18 @@ public class Test {
 //        Cat cat = new Cat();
 //        cat.sayHello();
 
-        Child child = new Child();
+//        Child child = new Child();
 
-        System.out.println(child.hasSuperPowers());
+//        System.out.println(child.hasSuperPowers());
+//
+//        child.setAge(12);
+//        child.childMethod();
+
+
+        Child child = new Child(22, "Dwaipayan");
+        System.out.println(child.getAge());
+        System.out.println(child.getName());
+        child.childMethod();
 
     }
 
