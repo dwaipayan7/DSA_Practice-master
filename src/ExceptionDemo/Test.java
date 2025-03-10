@@ -3,7 +3,12 @@ package ExceptionDemo;
 public class Test {
 
     public static int divide(int a, int b){
-        return a/b ;
+        try {
+            return a/b ;
+        }catch (ArithmeticException e){
+            System.out.println(e);
+            return -1;
+        }
     }
 
     public static void main(String[] args) {
@@ -16,6 +21,11 @@ public class Test {
         }
 
         System.out.println("Good Job");
+
+//        Student student = new Student();
+//        student.setId(1234);
+//        System.out.println(student);
+
 
     }
 
