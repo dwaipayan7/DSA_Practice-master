@@ -7,7 +7,13 @@ public class Test2 {
             level1();
         }catch (Exception e){
             StackTraceElement[] stackTrace = e.getStackTrace();
-            System.out.println(e);
+//            System.out.println(e);
+//            for(int i = 0; i<stackTrace.length; i++){
+//                System.out.println(stackTrace[i]);
+//            }
+
+            e.printStackTrace();
+
         }
 
     }
