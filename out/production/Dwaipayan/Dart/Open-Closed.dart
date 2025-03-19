@@ -3,13 +3,13 @@ abstract interface class Shape{
 }
 
 class Circle implements Shape{
-  double radius;
-  Circle(this.radius);
+
+ final double radius;
+  Circle({required this.radius});
+
   @override
   double calculateArea() {
-
-    return 3.14 * radius * radius;
-
+    return radius * radius;
   }
 
 }
@@ -42,7 +42,7 @@ class AreaCalculator{
 }
 
 void main(){
-  Circle circle = Circle(5.0);
+  Circle circle = Circle(radius: 3);
   Rectangle rectangle = Rectangle(4.0, 5.0);
   Square square = new Square(3.0);
 
