@@ -3,22 +3,18 @@ package PracticeNew;
 import java.util.Stack;
 
 public class MinStack {
-    Stack<Integer> stack;
-    Stack<Integer> minStack;
+    static Stack<Integer> stack = new Stack<>();
+    static Stack<Integer> minStack = new Stack<>();
 
-    public MinStack() {
-        stack = new Stack<>();
-        minStack = new Stack<>();
-    }
 
-    public void push(int val) {
+    public static void push(int val) {
         stack.push(val);
         if (minStack.isEmpty() || minStack.peek() >= val) {
             minStack.push(val);
         }
     }
 
-    public void pop() {
+    public static void pop() {
         if (!stack.isEmpty()) {
             if (stack.peek().equals(minStack.peek())) {
                 minStack.pop();
@@ -27,14 +23,14 @@ public class MinStack {
         }
     }
 
-    public int top() {
+    public static int top() {
         if (!stack.isEmpty()) {
             return stack.peek();
         }
         throw new RuntimeException("Stack is empty");
     }
 
-    public int getMin() {
+    public static int getMin() {
         if (!minStack.isEmpty()) {
             return minStack.peek();
         }
@@ -42,18 +38,17 @@ public class MinStack {
     }
 
     public static void main(String[] args) {
-        MinStack minStack = new MinStack();
 
-        minStack.push(5);
-        minStack.push(2);
-        minStack.push(8);
-        minStack.push(1);
+        push(5);
+        push(2);
+        push(8);
+        push(1);
 
-        System.out.println("Top element: " + minStack.top()); // Should print 1
-        System.out.println("Minimum element: " + minStack.getMin()); // Should print 1
+        System.out.println("Top element: " + top());
+        System.out.println("Minimum element: " + getMin());
 
-        minStack.pop();
-        System.out.println("Top element after pop: " + minStack.top()); // Should print 8
-        System.out.println("Minimum element after pop: " + minStack.getMin()); // Should print 2
+        pop();
+        System.out.println("Top element after pop: " + top());
+        System.out.println("Minimum element after pop: " + getMin());
     }
 }
