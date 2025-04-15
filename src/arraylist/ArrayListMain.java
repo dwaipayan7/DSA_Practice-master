@@ -27,16 +27,16 @@ public class ArrayListMain {
 //        System.out.println(arrayList.contains(1));
 
 
-        arrayList.remove(2);
-        System.out.println(arrayList.size());
-
-        arrayList.add(1, 50);
-
-        arrayList.set(2, 50);
-
-        for (int x : arrayList){
-            System.out.print(x+" ");
-        }
+//        arrayList.remove(2);
+//        System.out.println(arrayList.size());
+//
+//        arrayList.add(1, 50);
+//
+//        arrayList.set(2, 50);
+//
+//        for (int x : arrayList){
+//            System.out.print(x+" ");
+//        }
 
     }
 
