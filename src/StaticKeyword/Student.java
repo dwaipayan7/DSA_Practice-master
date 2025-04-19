@@ -44,6 +44,6 @@ public class Student {
 
     public static void getCount(){
 //        return count;
-        System.out.println(STR."Total Students: \{count}");
+        System.out.println(count);
     }
 }
