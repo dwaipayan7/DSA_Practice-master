@@ -15,6 +15,9 @@ public class LamdaExpression {
 
         MathOperations sumOperation = (int a , int b) -> a+b;
 
+        int res = sumOperation.operate(1, 2);
+        System.out.println(res);
+
 
     }
 
