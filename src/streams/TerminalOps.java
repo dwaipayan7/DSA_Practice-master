@@ -14,7 +14,9 @@ public class TerminalOps {
         List<Integer> list = Arrays.asList(1, 2, 3);
 
         //1. collect
+//        list.stream().skip(1).toList();
         list.stream().skip(1).toList();
+
 
         //2. forEach
         list.forEach(System.out::println);

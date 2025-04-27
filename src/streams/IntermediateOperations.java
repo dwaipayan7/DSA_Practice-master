@@ -27,6 +27,18 @@ public class IntermediateOperations {
         //peek
         Stream.iterate(1,x->x+1).skip(10).limit(100).peek(System.out::println).count();
 
+        System.out.println(list.stream().filter(x -> x.startsWith("B")).count());
+
+        //distinct
+
+        System.out.println(list.stream().filter(x -> x.startsWith("A")).distinct().count());
+
+        System.out.println(Stream.iterate(1, x -> x+1).count());
+
+        // skip
+
+        System.out.println(Stream.iterate(1, x -> x+1).skip(10).limit(110).count());
+
     }
 
 }
