@@ -9,8 +9,10 @@ abstract interface class Eater{
 class Developer implements Worker{
   @override
   void work() {
-    print("Developer is Working");
+    // TODO: implement work
+    print("Developer is working");
   }
+
 }
 
 class Waiter implements Eater, Worker{

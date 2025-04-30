@@ -1,6 +1,8 @@
 package SetsPractice;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.stream.Collectors;
 
 public class SetOverView {
 
@@ -28,6 +30,20 @@ public class SetOverView {
         for (int i : set){
             System.out.println(i);
         }
+
+        Set<Integer> set1 = new ConcurrentSkipListSet<>();
+
+
+        Set<Integer> syncSet = Collections.synchronizedSet(new TreeSet<>());
+
+        synchronized (syncSet){
+            for (Integer i : syncSet){
+                System.out.println(i);
+            }
+        }
+
+        Set.of(1, 2, 3, 4);
+
 
     }
 
