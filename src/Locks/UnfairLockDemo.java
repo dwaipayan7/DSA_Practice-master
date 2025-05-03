@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class UnfairLockDemo {
 
-    private final Lock unfairLock = new ReentrantLock();
+    private final Lock unfairLock = new ReentrantLock(true);
 
 
     public void accessResources(){
@@ -18,8 +18,9 @@ public class UnfairLockDemo {
             Thread.currentThread().interrupt();
         }
         finally {
-            unfairLock.unlock();
             System.out.println(Thread.currentThread().getName()+" released the lock");
+            unfairLock.unlock();
+
         }
     }
 
