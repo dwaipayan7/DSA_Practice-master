@@ -1,5 +1,8 @@
 package PracticeNew1;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class BubbleSort {
 
     static void bubbleSort(int[]arr){
@@ -28,9 +31,11 @@ public class BubbleSort {
             System.out.print(num+" ");
         }
 
+//        System.out.println(Arrays.toString(arr));
+
         bubbleSort(arr);
 
-        System.out.println("Sorted Array");
+        System.out.println("\nSorted Array");
         for (int num: arr){
             System.out.print(num+" ");
         }
