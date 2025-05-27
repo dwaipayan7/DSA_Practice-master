@@ -1,6 +1,6 @@
 package abstraction.Abstraction;
 
-public abstract class Animal {
+public class Animal {
     private int age;
     private  String name;
 
@@ -22,7 +22,9 @@ public abstract class Animal {
 
 
 
-    public abstract void sayHello();
+    public void sayHello(){
+        System.out.println("...");
+    }
 
     public void sleep(){
         System.out.println("Sleeping");
