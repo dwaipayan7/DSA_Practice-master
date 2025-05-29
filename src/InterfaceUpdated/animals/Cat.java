@@ -1,4 +1,4 @@
-package InterfaceUpdated;
+package InterfaceUpdated.animals;
 
 public class Cat implements Animal{
     @Override
