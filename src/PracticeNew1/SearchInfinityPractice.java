@@ -2,41 +2,34 @@ package PracticeNew1;
 
 public class SearchInfinityPractice {
 
-    static int searchInfinity(int[]arr, int key) {
-
+    static int searchInfinity(int[] arr, int key) {
         int low = 0;
         int high = 1;
 
-        while (arr[high] < key){
+        // Prevent high from exceeding bounds
+        while (high < arr.length && arr[high] < key) {
             low = high;
             high = 2 * high;
         }
 
+
         return binarySearch(arr, key, low, high);
     }
 
-    static int binarySearch(int[]arr, int key, int low, int high){
+    static int binarySearch(int[] arr, int key, int low, int high) {
+        while (low <= high) {
+            int mid = low + (high - low) / 2; // Correct formula
 
-        low = 0;
-        high = arr.length;
-
-        while (low <= high){
-            int mid = low + (high-low)/2;
-
-            if (arr[mid] == key){
+            if (arr[mid] == key) {
                 return mid;
             } else if (arr[mid] < key) {
-
-                low = mid+1;
-
-            }else{
-                high = mid-1;
+                low = mid + 1;
+            } else {
+                high = mid - 1;
             }
-
         }
 
         return -1;
-
     }
 
     public static void main(String[] args) {
@@ -50,5 +43,4 @@ public class SearchInfinityPractice {
             System.out.println("Element not found.");
         }
     }
-
 }
