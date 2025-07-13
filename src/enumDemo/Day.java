@@ -15,6 +15,7 @@ public enum Day {
         this.lower = lower;
     }
 
+
     private String lower;
 
     public void display(){
