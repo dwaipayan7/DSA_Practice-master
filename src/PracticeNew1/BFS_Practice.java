@@ -17,7 +17,7 @@ public class BFS_Practice {
         }
     }
 
-    static void bfs(ArrayList<Edge>graph[], int v,  boolean[] vis, int start){
+    static void bfs(ArrayList<Edge>[] graph, int v, boolean[] vis, int start){
         Queue<Integer> q = new ArrayDeque<>();
         q.add(start);
         while (!q.isEmpty()){
