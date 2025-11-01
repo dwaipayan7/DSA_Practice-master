@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 class Node {
-    int data;
+     int data;
     Node next;
 
     Node(int data) {
