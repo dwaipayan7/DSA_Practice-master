@@ -1,5 +1,7 @@
 package test;
 
+import OOPs.Dog;
+
 public class Test {
 
     static void main() {
@@ -22,8 +24,19 @@ public class Test {
 //        cat.eat();
 //        cat.meow();
 
-        Animal cat = new Cat();
-        cat.eat();
+        Animal animal1 = new Animal();
+        animal1.call();
+
+        Animal animal = new Cat();
+//        cat.eat();
+
+        animal.call();
+
+        Cat cat1 = new Cat();
+        cat1.call();
+
+        Cat cat2 = (Cat) animal;
+        cat2.call();
 
     }
 
