@@ -2,7 +2,7 @@ package InheritanceDemo.animals;
 
 import GenericsPractice.Pair;
 
-public class Animal {
+public class  Animal {
 
     private String name;
 
