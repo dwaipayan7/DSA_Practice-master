@@ -19,6 +19,7 @@ public class PalindromeLinkedListPractice {
         Node mid = middle(head);
         Node last = reverse(mid.next);
         Node curr = head;
+
         while (last != null){
             if (last.data != curr.data){
                 return false;
@@ -26,7 +27,6 @@ public class PalindromeLinkedListPractice {
             last = last.next;
             curr = curr.next;
         }
-
 
         return true;
     }
